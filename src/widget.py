@@ -1,3 +1,5 @@
+import maya
+from typing import Any
 from masks import card_number, account_number
 
 
@@ -20,9 +22,23 @@ def type_card_and_account_number(type_and_number: str) -> str:
         return " ".join(name_and_masks)
 
 
+def datatime(data: str) -> Any:
+    """
+    Функция преобразовании времени и даты
+    :param data: Время и дату
+    :return: Дату
+    """
+    data_and_time = maya.parse(data).datetime()
+    return data_and_time.date()
+
+
 def main():
-    user_type_and_number = str(input()).lower()
+    user_type_and_number = str(input("Введите тип карты/счета и ее номер:")).lower()
     print(type_card_and_account_number(user_type_and_number))
+
+    user_datatime = "2018-07-11T02:26:18.671407"
+    print(datatime(user_datatime))
+
 
 if __name__ == "__main__":
     main()
