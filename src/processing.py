@@ -13,14 +13,14 @@ def filter_state(info: list, state="EXECUTED") -> list:
     return filter_dict
 
 
-def sort_date(sorted_date: list) -> list:
+def sort_date(sorted_date: list, reverse=True) -> list:
     """
     Функцию, которая принимает на вход список словарей для ее отсортировки по дате
+    :param reverse: True или False, для сортировки от убыв. к возраст. и наоборот
     :param sorted_date:список со словарями
-    :return:возвращает новый список,
-            в котором исходные словари отсортированы по убыванию даты
+    :return:возвращает новый список дат
     """
-    date = sorted(sorted_date, key=lambda info_date: info_date["date"], reverse=True)
+    date = sorted(sorted_date, key=lambda info_date: info_date["date"], reverse=reverse)
     return date
 
 
@@ -32,7 +32,7 @@ def main():
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     ]
     print(f"Отсортировка по значанию 'state': {filter_state(input_info,'CANCELED')}")
-    print(f"Отсортировка по значанию 'date': {sort_date(input_info)}")
+    print(f"Отсортировка по значанию 'date': {sort_date(input_info, True)}")
 
 
 if __name__ == "__main__":
