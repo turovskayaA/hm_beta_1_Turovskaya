@@ -18,12 +18,7 @@ def account_number(number: str) -> str:
     return stars
 
 
-def main():
-    user_card = str(input("Номер карты: "))
-    print(card_number(user_card))
-    user_invoice = str(input("Номер счета: "))
-    print(account_number(user_invoice))
-
-
-if __name__ == "__main__":
-    main()
+user_card = "7020792289606361"
+print(card_number(user_card))
+user_invoice = "73654108430135874305"
+print(account_number(user_invoice))
