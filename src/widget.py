@@ -30,11 +30,7 @@ def datatime(data: str) -> str:
     return f'{data[8:10]}.{data[5:7]}.{data[0:4]}'
 
 
-
 user_type_and_number = "Visa Platinum 8990922113665229"
 print(type_card_and_account_number(user_type_and_number))
 user_datatime = "2018-07-11T02:26:18.671407"
 print(datatime(user_datatime))
-
-
-
