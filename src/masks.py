@@ -5,7 +5,7 @@ def card_number(number: str) -> str:
     :return: Маскированный по правилу номер карты
     """
     stars = number[0:6] + ("*" * len(number[6:12])) + number[12:16]
-    return " ".join([stars[i: i + 4] for i in range(0, len(number), 4)])
+    return " ".join([stars[i : i + 4] for i in range(0, len(number), 4)])
 
 
 def account_number(number: str) -> str:
@@ -18,12 +18,7 @@ def account_number(number: str) -> str:
     return stars
 
 
-def main():
-    user_card = str(input("Номер карты: "))
-    print(card_number(user_card))
-    user_invoice = str(input("Номер счета: "))
-    print(account_number(user_invoice))
-
-
-if __name__ == "__main__":
-    main()
+user_card = "7020792289606361"
+print(card_number(user_card))
+user_invoice = "73654108430135874305"
+print(account_number(user_invoice))
