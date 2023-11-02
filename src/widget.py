@@ -1,4 +1,4 @@
-from masks import card_number, account_number
+from src.masks import card_number, account_number
 
 
 def type_card_and_account_number(type_and_number: str) -> str:
