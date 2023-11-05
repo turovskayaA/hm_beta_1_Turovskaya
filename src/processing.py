@@ -18,8 +18,7 @@ def sort_date(sorted_date: list, reverse=True) -> list:
     Функцию, которая принимает на вход список словарей для ее отсортировки по дате
     :param reverse: True или False, отсортировка по убыванию/возрастани даты
     :param sorted_date:список со словарями
-    :return:возвращает новый список,
-            в котором исходные словари отсортированы по убыванию даты
+    :return:возвращает новый список дат
     """
     date = sorted(sorted_date, key=lambda info_date: info_date["date"], reverse=reverse)
     return date
